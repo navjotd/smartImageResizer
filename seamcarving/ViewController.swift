@@ -31,10 +31,10 @@ class ViewController: UIViewController {
         
         let width = self.testImage.image?.cgImage?.width
         let height = self.testImage.image?.cgImage?.height
-        let colorspace = CGColorSpaceCreateDeviceGray()
+        let colorspace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGImageAlphaInfo.premultipliedFirst.rawValue
 
-        let bytesPerPixel: Int = 1
+        let bytesPerPixel: Int = 4
         let bytesPerRow: Int = width! * bytesPerPixel
         let bitsPerComponent: Int = 8
         let raw = malloc(bytesPerRow * height!)
@@ -50,7 +50,12 @@ class ViewController: UIViewController {
         ctx.draw((self.testImage.image?.cgImage)!, in: drawingRect)
         
         let data = ctx.data?.assumingMemoryBound(to: UInt8.self)
-        print(data)
+        let arr = Array(UnsafeBufferPointer(start: data, count: width! * height! * 4))
+        let bwArr = arr.enumerated().filter({ index, _ in
+            return (index-1) % 4 == 0
+        }).map({$0.1})
+        
+        print(bwArr[0])
     }
 
 }
