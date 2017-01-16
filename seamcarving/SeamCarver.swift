@@ -47,7 +47,7 @@ class SeamCarver: NSObject {
         ctx.draw((gradientImage.cgImage)!, in: drawingRect)
         let gradientArr = Array(UnsafeBufferPointer(start: ctx.data?.assumingMemoryBound(to: UInt8.self), count: width * height * 4))
         
-        for index in 0...self.weightMatrix!.count {
+        for index in 0...(self.weightMatrix!.count - 1) {
             let gradientIndex = ((index + 1) * 4) - 1
             let gradientValue = gradientArr[gradientIndex]
             let row: Int = index / width
