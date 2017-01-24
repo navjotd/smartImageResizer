@@ -6,4 +6,4 @@ For this project I explored the content-aware image resizing algorithm known as 
 #### Examples
 ![Input Image](https://github.com/navjotd/smartImageResizer/blob/master/examples/ex1.jpg "Input Image") ![Output Image](https://github.com/navjotd/smartImageResizer/blob/master/examples/ex1out.png "Output Image")
 
-![Input Image](https://github.com/navjotd/smartImageResizer/blob/master/examples/ex2in.jpg "Input Image") ![Output Image](https://github.com/navjotd/smartImageResizer/blob/master/examples/ex2out.png "Output Image")
+![Input Image](https://github.com/navjotd/smartImageResizer/blob/master/examples/example2in.jpg "Input Image") ![Output Image](https://github.com/navjotd/smartImageResizer/blob/master/examples/ex2out.png "Output Image")
